@@ -52,6 +52,7 @@ public class BrokerRegistryIntegrationTest {
         bk.start();
         pulsar = new PulsarService(brokerConfig());
         pulsar.start();
+        // Try to debug
         final var admin = pulsar.getAdminClient();
         admin.clusters().createCluster(clusterName, ClusterData.builder().build());
         admin.tenants().createTenant("public", TenantInfo.builder()
